@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginDto } from 'src/app/DTO/login.dto';
+import { Login } from 'src/app/models/login';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,10 +9,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  usuario: LoginDto;
+  usuario: Login;
 
   constructor(private authService: AuthService) { 
-    this.usuario = new LoginDto('', '');
+    this.usuario = new Login('', '');
   }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     // Llamar a un servicio que mande la petición de login
     // a la API.
     this.authService.login(this.usuario).subscribe(res => {
-        alert('API TOKEN ' + res.token);
+      localStorage.setItem('token', res.token);
     });
   }
 
