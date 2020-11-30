@@ -29,13 +29,6 @@ export class TweetsService {
 
   constructor(private http:HttpClient) { }
 
-  getTweet(): Observable<Tweet>{
-    return this.http.get<Tweet>(
-      ALL_TWEETS_URL,
-      httpOptions
-    );
-  }
-
   getAllTweets(): Observable<Tweet[]>{
     return this.http.get<Tweet[]>(
       ALL_TWEETS_URL,
@@ -54,7 +47,7 @@ export class TweetsService {
   like(id:number): Observable<Tweet>{
     return this.http.post<Tweet>(
       LIKE_TWEET_URL + "/" + id,
-      this.getTweet,
+      null,
       httpOptions
     );
   }
