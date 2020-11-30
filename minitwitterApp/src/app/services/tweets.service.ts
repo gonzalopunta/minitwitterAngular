@@ -7,12 +7,12 @@ import { Tweet } from '../models/tweet.interface';
 
 const ALL_TWEETS_URL = 'https://www.minitwitter.com:3001/apiv1/tweets/all';
 const NEW_TWEET_URL = 'https://www.minitwitter.com:3001/apiv1/tweets/create';
-const LIKE_TWEET_ID = 'https://www.minitwitter.com:3001/apiv1/tweets/like';
+const LIKE_TWEET_URL = 'https://www.minitwitter.com:3001/apiv1/tweets/like';
 
 
-let usuario= JSON.parse(localStorage.getItem('usuario'));
+var usuario= JSON.parse(localStorage.getItem('usuario'));
 
-let token= usuario.token;
+var token= usuario.token;
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -53,7 +53,7 @@ export class TweetsService {
 
   like(id:number): Observable<Tweet>{
     return this.http.post<Tweet>(
-      LIKE_TWEET_ID + "/" + id,
+      LIKE_TWEET_URL + "/" + id,
       this.getTweet,
       httpOptions
     );

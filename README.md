@@ -1,1 +1,1 @@
-# minitwitterAngular
+# Una vez clonado el repositorio hay que escribir el comando "npm i -s @angular/flex-layout @angular/cdk", "ng add @angular/material" para instalar las dependencias necesarias y una vez hecho eso para arrancar el proyecto ponerte en la carpeta del proyecto y hacer un "ng serve" o "ng serve -o". El segundo es un atajo para que se te abra el navegador automaticamente
