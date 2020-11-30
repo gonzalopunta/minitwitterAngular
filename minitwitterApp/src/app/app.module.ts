@@ -13,6 +13,14 @@ import { LoginComponent } from './componets/login/login.component';
 import { RegistroComponent } from './componets/registro/registro.component';
 import { AuthService } from './services/auth.service';
 import { TweetsComponent } from './componets/tweets/tweets.component';
+import { Routes } from '@angular/router';
+import { Registrar } from './models/registrar.interface';
+
+const routes: Routes = [
+  { path: "", component: LoginComponent},
+  { path: "registrar", component: Registrar},
+  { path: "inicio", component: TweetsComponent}
+];
 
 @NgModule({
   declarations: [
