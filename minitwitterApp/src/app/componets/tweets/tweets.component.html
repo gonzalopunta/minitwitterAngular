@@ -1,3 +1,17 @@
-<p>
-  tweets works!
-</p>
+<div class="container my-4 fondo">
+  <table style="width: 100%; border: 1px solid black;" class="table">
+      <thead>
+          <th>Usuario</th>
+          <th>mensaje</th>
+          <th>likes</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let tweet of tweets">
+              <td>{{tweet.usuario.username}}</td>
+              <td>{{tweet.mensaje}}</td>
+              <td>{{tweet.likes.length}}</td>
+              <button (click)="likeTweet([tweet.id])">Me gusta</button>
+          </tr>
+      </tbody>
+  </table>
+  </div>

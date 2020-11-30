@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,4 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'minitwitterApp';
-
-  constructor(private authService: AuthService){}
-
-  public requestToken(){
-    this.authService.getTokenRequest().subscribe( res =>{
-      localStorage.setItem('token', res.token);
-    });
-  }
 }

@@ -8,7 +8,7 @@ import { Login } from '../models/login.interface';
 
 
 const LOGIN_URL = 'https://www.minitwitter.com:3001/apiv1/auth/login';
-const SIGNIN_URL ='https://www.minitwitter.com:3001/apiv1/auth/signup';
+const SIGNUP_URL ='https://www.minitwitter.com:3001/apiv1/auth/signup';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -34,7 +34,7 @@ export class AuthService {
 
   registro(registrar: Registrar): Observable<RegistrarResponse> {
     return this.http.post<RegistrarResponse>(
-      SIGNIN_URL,
+      SIGNUP_URL,
       registrar,
       httpOptions
     );

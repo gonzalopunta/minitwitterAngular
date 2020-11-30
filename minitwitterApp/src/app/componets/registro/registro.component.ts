@@ -20,11 +20,11 @@ export class RegistroComponent implements OnInit {
 
   registrar(){
     this.authService.registro(this.registrarNuevoUsuario).subscribe (res => {
-      this.router.navigate(["/"]);
+      this.router.navigate([""]);
     })
   }
 
   irALogin(){
-    this.router.navigate(["/src/app/componets/login"]);
+    this.router.navigate([""]);
   }
 }
